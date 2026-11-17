@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SoundsFolk · Brisbane Folk Festival 2027</title>
+  <meta name="description" content="SoundsFolk – a one-day Brisbane folk festival. Sunday 21st March 2027 at The Officers Mess, New Farm.">
+  <meta name="theme-color" content="#0e4527">
+  <meta property="og:title" content="SoundsFolk · Brisbane Folk Festival">
+  <meta property="og:description" content="Sunday 21st March 2027 · The Officers Mess, New Farm">
+  <meta property="og:image" content="assets/poster.webp">
+  <link rel="icon" href="assets/flower.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Decorative vine borders (from the poster artwork) -->
+  <div class="vine vine--left" aria-hidden="true"></div>
+  <div class="vine vine--right" aria-hidden="true"></div>
+  <div class="vine-band" aria-hidden="true"></div>
+
+  <div class="card">
+    <header class="nav" id="top">
+      <a class="nav__brand" href="#top" aria-label="SoundsFolk home">
+        <img src="assets/flower.webp" alt="" width="32" height="32">
+        <span>SoundsFolk</span>
+      </a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links">
+        <span class="nav__toggle-bar"></span>
+        <span class="sr-only">Menu</span>
+      </button>
+      <nav id="nav-links" class="nav__links" aria-label="Main">
+        <a href="#lineup">Line-up</a>
+        <a href="#schedule">Running order</a>
+        <a href="#tickets">Tickets</a>
+        <a href="#venue">Venue</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn--small" href="#tickets">Get tickets</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- HERO -->
+      <section class="hero">
+        <h1 class="sr-only">SoundsFolk – Brisbane Folk Festival</h1>
+        <img class="hero__logo" src="assets/logo.webp" alt="SoundsFolk logo with flowers and blue branches" width="780" height="430">
+        <p class="hero__tag">Brisbane Folk Festival</p>
+        <img class="flower-mark" src="assets/flower.webp" alt="" width="60" height="60">
+        <p class="hero__date">Sunday 21st March 2027</p>
+        <p class="hero__venue">The Officers Mess</p>
+        <p class="hero__suburb">New Farm</p>
+
+        <div class="countdown" id="countdown" aria-live="polite">
+          <div><span data-unit="days">–</span><small>days</small></div>
+          <div><span data-unit="hours">–</span><small>hours</small></div>
+          <div><span data-unit="mins">–</span><small>mins</small></div>
+          <div><span data-unit="secs">–</span><small>secs</small></div>
+        </div>
+
+        <div class="hero__cta">
+          <a class="btn" href="#tickets">Get tickets</a>
+          <a class="btn btn--ghost" href="#lineup">See the line-up</a>
+        </div>
+      </section>
+
+      <!-- LINE-UP -->
+      <section class="section" id="lineup" aria-labelledby="lineup-h">
+        <h2 id="lineup-h" class="section__title">The Line-up</h2>
+        <p class="section__lede">A full day of strings, songs and stories from Brisbane and beyond. Tap an act to read more.</p>
+        <ul class="lineup" id="lineup-list"></ul>
+        <div class="act-detail" id="act-detail" hidden>
+          <button class="act-detail__close" aria-label="Close">×</button>
+          <h3 class="act-detail__name"></h3>
+          <p class="act-detail__meta"></p>
+          <p class="act-detail__blurb"></p>
+        </div>
+      </section>
+
+      <img class="possums" src="assets/possums.webp" alt="Two purple possums playing banjo and fiddle" width="440" height="180" loading="lazy">
+
+      <!-- RUNNING ORDER -->
+      <section class="section" id="schedule" aria-labelledby="schedule-h">
+        <h2 id="schedule-h" class="section__title">Running Order</h2>
+        <p class="section__lede">Times are a guide and may shift on the day.</p>
+        <div class="stage-tabs" role="tablist" id="stage-tabs"></div>
+        <ol class="schedule" id="schedule-list"></ol>
+      </section>
+
+      <!-- TICKETS -->
+      <section class="section section--tint" id="tickets" aria-labelledby="tickets-h">
+        <h2 id="tickets-h" class="section__title">Tickets</h2>
+        <p class="section__lede">One day, every act. Grab yours before they're gone.</p>
+        <div class="tickets">
+          <article class="ticket ticket--green">
+            <h3>Early Bird</h3>
+            <p class="ticket__price">$45</p>
+            <ul>
+              <li>Full-day entry</li>
+              <li>Limited release</li>
+            </ul>
+            <a class="btn" href="#" data-ticket="early">Buy early bird</a>
+          </article>
+          <article class="ticket ticket--purple ticket--featured">
+            <p class="ticket__flag">Most popular</p>
+            <h3>General Admission</h3>
+            <p class="ticket__price">$60</p>
+            <ul>
+              <li>Full-day entry</li>
+              <li>Access to all stages</li>
+              <li>Jam session corner</li>
+            </ul>
+            <a class="btn" href="#" data-ticket="ga">Buy GA</a>
+          </article>
+          <article class="ticket ticket--blue">
+            <h3>Concession</h3>
+            <p class="ticket__price">$40</p>
+            <ul>
+              <li>Students, seniors &amp; card holders</li>
+              <li>Under 12s free with an adult</li>
+            </ul>
+            <a class="btn" href="#" data-ticket="concession">Buy concession</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- VENUE -->
+      <section class="section" id="venue" aria-labelledby="venue-h">
+        <h2 id="venue-h" class="section__title">The Venue</h2>
+        <div class="venue">
+          <div class="venue__text">
+            <p class="venue__name">The Officers Mess</p>
+            <p class="venue__suburb">New Farm, Brisbane</p>
+            <p>A heritage space by the river with room to sit, listen and wander between sets. Bring a picnic rug and settle in for the day.</p>
+            <ul class="venue__list">
+              <li><strong>Doors:</strong> 11:30am</li>
+              <li><strong>Music:</strong> 12pm – 9pm</li>
+              <li><strong>Getting there:</strong> CityCat to New Farm Park, or buses along Brunswick St</li>
+              <li><strong>Accessibility:</strong> step-free main stage area &amp; accessible toilets</li>
+            </ul>
+            <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=The+Officers+Mess+New+Farm+Brisbane" target="_blank" rel="noopener">Open in Maps</a>
+          </div>
+          <figure class="venue__poster">
+            <img src="assets/poster-small.webp" alt="SoundsFolk 2027 festival poster" width="534" height="800" loading="lazy">
+            <figcaption><a href="assets/poster.webp" target="_blank" rel="noopener">View the full poster</a></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section section--tint" id="faq" aria-labelledby="faq-h">
+        <h2 id="faq-h" class="section__title">Good to Know</h2>
+        <div class="faq">
+          <details>
+            <summary>Is the festival all ages?</summary>
+            <p>Yes! Kids are very welcome. Under 12s get in free with a paying adult.</p>
+          </details>
+          <details>
+            <summary>Can I bring my own instrument?</summary>
+            <p>Absolutely. There's a jam session corner running all afternoon – bring your fiddle, banjo, whistle or voice.</p>
+          </details>
+          <details>
+            <summary>Will there be food and drinks?</summary>
+            <p>Local food stalls and a licensed bar run all day. No BYO alcohol, but you're welcome to bring a picnic.</p>
+          </details>
+          <details>
+            <summary>What if it rains?</summary>
+            <p>The show goes on. Main sets move under cover, so pack a jacket just in case.</p>
+          </details>
+          <details>
+            <summary>Are tickets refundable?</summary>
+            <p>Tickets are refundable up to 14 days before the event. After that, you can transfer your ticket to a friend.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <img class="flower-mark" src="assets/flower.webp" alt="" width="48" height="48" loading="lazy">
+      <p class="footer__date">Sunday 21st March 2027 · The Officers Mess · New Farm</p>
+      <div class="footer__row">
+        <a class="footer__url" href="https://www.brisbaneunpluggedgigs.org" target="_blank" rel="noopener">www.brisbaneunpluggedgigs.org</a>
+        <img class="footer__bug" src="assets/the-bug.webp" alt="The Bug" width="175" height="150" loading="lazy">
+      </div>
+      <p class="footer__small">&copy; <span id="year">2026</span> SoundsFolk · Brisbane Unplugged Gigs</p>
+    </footer>
+  </div>
+
+  <div class="vine-band vine-band--bottom" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
