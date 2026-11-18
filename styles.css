@@ -84,8 +84,8 @@ a { color: var(--blue); }
 .section__title,
 .hero__tag, .hero__date, .hero__venue, .hero__suburb,
 .nav__brand, .btn, .ticket h3, .ticket__price, .venue__name, .venue__suburb,
-.lineup, .footer__date, .footer__url, .countdown span, .schedule__time, .schedule__act,
-.stage-tab, .faq summary, .act-detail__name {
+.lineup__name, .footer__date, .footer__url, .countdown span, .schedule__time, .schedule__act,
+.stage-tab, .faq summary {
   font-family: var(--display);
   font-weight: 400;
   text-transform: uppercase;
@@ -180,6 +180,10 @@ a { color: var(--blue); }
 .countdown div:nth-child(4) span { color: var(--orange); }
 .countdown small { font-weight: 800; font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); opacity: .7; }
 
+.hero__note {
+  font-family: var(--display); text-transform: uppercase; letter-spacing: .05em;
+  font-size: 1.5rem; color: var(--blue); margin: 22px 0 0;
+}
 .hero__cta { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
 
 /* ---------- Sections ---------- */
@@ -206,41 +210,62 @@ a { color: var(--blue); }
   font-size: clamp(2.1rem, 5.5vw, 3.6rem);
   text-align: center;
 }
-.lineup button {
-  font: inherit; text-transform: inherit; letter-spacing: inherit;
-  background: none; border: 0; padding: 0 .05em; cursor: pointer;
-  color: inherit; line-height: 1.05;
-  transition: transform .15s;
+.lineup li {
+  display: flex; flex-direction: column; align-items: center;
+  padding: .1em .3em .25em;
+  line-height: 1.05;
 }
-.lineup button:hover, .lineup button[aria-pressed="true"] { transform: rotate(-3deg) scale(1.06); }
-.lineup button[aria-pressed="true"] { text-decoration: underline wavy; text-decoration-thickness: 3px; text-underline-offset: 8px; }
+.lineup__origin {
+  font-family: var(--body); font-weight: 800; text-transform: uppercase;
+  font-size: .9rem; letter-spacing: .14em; color: var(--ink); opacity: .65;
+  margin-top: .15em;
+}
 .lineup .c0 { color: var(--green); }
 .lineup .c1 { color: var(--blue); }
 .lineup .c2 { color: var(--blue-light); }
 .lineup .c3 { color: var(--purple); }
 .lineup .c4 { color: var(--orange); }
-.lineup .headliner { font-size: 1.25em; }
-
-.act-detail {
-  position: relative;
-  max-width: 620px; margin: 36px auto 0;
-  padding: 26px 28px 22px;
-  background: #fff9e9;
-  border: 3px solid var(--purple);
-  border-radius: 20px;
-  box-shadow: 6px 6px 0 var(--purple);
-  animation: pop .2s ease-out;
-}
-@keyframes pop { from { transform: scale(.96); opacity: 0; } }
-.act-detail__name { color: var(--purple); font-size: 2.6rem; margin: 0 30px 6px 0; }
-.act-detail__meta { margin: 0 0 10px; font-weight: 800; color: var(--blue); }
-.act-detail__blurb { margin: 0; }
-.act-detail__close {
-  position: absolute; top: 10px; right: 14px;
-  background: none; border: 0; font-size: 2rem; line-height: 1; color: var(--purple); cursor: pointer;
-}
+.lineup .tba { opacity: .45; }
 
 .possums { width: min(360px, 70%); margin: 8px auto; }
+
+/* ---------- Participate ---------- */
+.activities {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+}
+.activity {
+  background: var(--cream);
+  border-radius: 20px;
+  padding: 26px 24px 22px;
+  border: 3px solid var(--accent);
+  box-shadow: 6px 6px 0 var(--accent);
+  display: flex; flex-direction: column;
+}
+.activity--purple { --accent: var(--purple); --title: var(--purple); }
+.activity--orange { --accent: var(--orange); --title: #c27f0e; }
+.activity--blue { --accent: var(--blue); --title: var(--blue); }
+.activity__title {
+  font-family: var(--display); font-weight: 400; text-transform: uppercase;
+  letter-spacing: .03em; line-height: 1;
+  font-size: 2.4rem; color: var(--title); margin: 0;
+}
+.activity__with { font-weight: 800; color: var(--purple); margin: 4px 0 0; }
+.activity p { margin: 12px 0 0; }
+.activity .activity__with { margin-top: 4px; }
+.activity__list { list-style: none; padding: 0; margin: 14px 0 0; }
+.activity__list li {
+  position: relative; padding: 3px 0 3px 28px;
+  font-family: var(--display); text-transform: uppercase; letter-spacing: .03em;
+  font-size: 1.5rem; line-height: 1.1; color: var(--blue);
+}
+.activity__list li::before {
+  content: ""; position: absolute; left: 0; top: 50%; width: 18px; height: 18px; transform: translateY(-50%);
+  background: url("assets/flower.webp") center / contain no-repeat;
+}
+.activity__meta {
+  margin-top: auto !important; padding-top: 16px;
+  font-weight: 800; font-size: .95rem; color: #3d8a4c;
+}
 
 /* ---------- Schedule ---------- */
 .stage-tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
@@ -300,6 +325,7 @@ a { color: var(--blue); }
 }
 .venue__name { font-size: 3rem; color: var(--blue); margin: 0; }
 .venue__suburb { font-size: 2.2rem; color: var(--orange); margin: 4px 0 16px; }
+.venue__address { font-style: normal; font-weight: 800; font-size: 1.15rem; color: var(--purple); margin-top: -6px; }
 .venue__list { padding-left: 0; list-style: none; margin: 18px 0 26px; }
 .venue__list li { padding: 6px 0 6px 30px; position: relative; }
 .venue__list li::before {
@@ -355,6 +381,7 @@ a { color: var(--blue); }
 @media (max-width: 960px) {
   .tickets { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; gap: 34px; }
   .ticket--featured { transform: none; }
+  .activities { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
   .venue { grid-template-columns: 1fr; }
   .venue__poster { max-width: 320px; margin: 0 auto; }
   .venue__text { text-align: center; }
@@ -407,7 +434,6 @@ a { color: var(--blue); }
   .schedule li { grid-template-columns: 80px 1fr; gap: 10px; }
   .schedule__time { font-size: 1.4rem; }
   .schedule__act { font-size: 1.7rem; }
-  .act-detail { padding: 22px 20px 18px; }
   .nav { padding: 10px 16px; }
   .nav__brand { font-size: 1.7rem; }
 }
