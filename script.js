@@ -6,7 +6,7 @@
    NOTE: stages and times are placeholders until the real running order is set.
    ========================================================== */
 
-const FESTIVAL_START = new Date("2027-03-21T12:00:00+10:00"); // Brisbane (AEST, no DST)
+const FESTIVAL_START = new Date("2027-03-21T10:30:00+10:00"); // doors open, Brisbane time (AEST, no DST)
 
 const ACTS = [
   { name: "Dlu",              origin: "Scotland", stage: "Main Stage",   time: "12:30pm" },
